@@ -1,0 +1,16 @@
+<h4>Add a new task :</h4>
+
+  <input [(ngModel)]="newTask" (keypress)="save($event)" placeholder="Enter new task" onlyAlpha>
+
+
+<div>
+  <h4>YOUR TASK LIST</h4>
+</div>
+<div class="taskList">
+  <div *ngFor="let task of taskList" class="taskList2">
+    <ul>
+      <li strike>{{task}}</li>
+    </ul>
+  </div>
+</div>
+
