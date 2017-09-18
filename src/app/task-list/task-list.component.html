@@ -1,8 +1,5 @@
 <h4>Add a new task :</h4>
-
-  <input [(ngModel)]="newTask" (keypress)="save($event)" placeholder="Enter new task" onlyAlpha>
-
-
+<input [(ngModel)]="newTask" placeholder="Enter new task" onlyAlpha> <button (click)="save()" class="btn btn-sm btn-info">ADD</button>
 <div>
   <h4>YOUR TASK LIST</h4>
 </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {isNullOrUndefined, isUndefined} from "util";
 @Component({
   selector: 'app-task-list',
   templateUrl: './task-list.component.html',
@@ -11,14 +12,15 @@ export class TaskListComponent implements OnInit {
     "Complete github project"
   ];
   newTask: string;
-  save(event): void {
-    if (event.keyCode === 13) {
-      this.taskList.push(this.newTask);
-      this.newTask = "";
+  save(): void {
+    if (isNullOrUndefined(this.newTask)) {
+        alert('Please enter a task');
+      } else {
+        this.taskList.push(this.newTask);
+        this.newTask = null;
+      }
     }
-  }
-
-  constructor() { }
+ constructor() { }
 
   ngOnInit() {
   }
